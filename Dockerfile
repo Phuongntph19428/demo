@@ -8,6 +8,5 @@ FROM openjdk:17-alpine
 WORKDIR /app
 COPY --from=build /app/src/main/resources/static/files /app/static/files
 COPY --from=build /app/target/*.jar /app/app.jar
-COPY --from=build /app/target/classes /app/classes
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
